@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Sprint Calculator</title>
+  <link rel="icon" href="logo.png" type="image/png">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XCGHYN2HE0"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XCGHYN2HE0');</script>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'Barlow',sans-serif;background-color:rgb(219,234,241);display:block;padding:0;opacity:1;}
+
+    /* NAVBAR */
+    .navbar{position:fixed;top:0;left:0;width:100%;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.1);display:flex;align-items:center;justify-content:space-between;padding:10px 32px;z-index:1000;}
+    .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:#000;}
+    .nav-logo img{width:28px;height:28px;}
+    .nav-logo-text{display:flex;flex-direction:column;line-height:1.2;}
+    .nav-logo-name{font-size:15px;font-weight:bold;color:#000;}
+    .nav-logo-slogan{font-size:10px;color:rgb(37,158,210);letter-spacing:.5px;}
+    .nav-links{position:absolute;left:50%;transform:translateX(-50%);display:flex;gap:6px;align-items:center;}
+    .nav-link{text-decoration:none;color:#444;font-size:14px;padding:7px 18px;border-radius:5px;transition:background-color .2s,color .2s;white-space:nowrap;}
+    .nav-link:hover{background-color:rgb(219,234,241);color:#000;}
+    .nav-link.active{background-color:rgb(88,196,243);color:#fff;font-weight:bold;}
+    /* Dropdown: estil neutre quan NO estem a Gear */
+    .nav-dropdown{position:relative;display:inline-block;}
+    .nav-dropdown-trigger{text-decoration:none;color:#444;font-size:14px;padding:7px 18px;border-radius:5px;background:transparent;cursor:pointer;display:inline-flex;align-items:center;gap:5px;transition:background .2s,color .2s;}
+    .nav-dropdown-trigger:hover{background-color:rgb(219,234,241);color:#000;}
+    .nav-dropdown-trigger::after{content:'▾';font-size:10px;opacity:.6;}
+    .nav-dropdown-menu{display:none;position:absolute;top:100%;left:50%;transform:translateX(-50%);padding-top:8px;z-index:200;min-width:200px;}
+    .nav-dropdown-menu-inner{background:#fff;border-radius:8px;box-shadow:0 8px 24px rgba(0,0,0,.12);overflow:hidden;}
+    .nav-dropdown:hover .nav-dropdown-menu{display:block;}
+    .nav-dropdown-item{display:block;text-decoration:none;color:#333;font-size:13px;font-weight:600;padding:11px 18px;transition:background .15s,color .15s;border-bottom:1px solid rgba(0,0,0,.05);}
+    .nav-dropdown-item:last-child{border-bottom:none;}
+    .nav-dropdown-item:hover{background:rgb(219,234,241);color:rgb(37,158,210);}
+    .anchor-target{scroll-margin-top:72px;}
+
+    /* HERO */
+    .hero{margin-top:52px;display:grid;grid-template-columns:3fr 2fr;min-height:calc(100vh - 52px);}
+    .hero-left{background:#1c2b35;position:relative;overflow:hidden;}
+    .hero-photo-bg{position:absolute;inset:0;background-color:#1c2b35;background-size:cover;background-position:center top;}
+    .hero-photo-overlay{position:absolute;inset:0;background:linear-gradient(to right,transparent 55%,#1e3040 100%);}
+    .hero-right{background:#1e3040;display:flex;flex-direction:column;justify-content:center;padding:52px 48px 52px 40px;}
+    .hero-tag{display:inline-block;background:rgba(88,196,243,.15);color:rgb(88,196,243);font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 14px;border-radius:20px;margin-bottom:24px;align-self:flex-start;}
+    .hero-right h1{font-family:'Barlow Condensed',sans-serif;font-size:62px;font-weight:800;line-height:1.02;color:#fff;margin-bottom:28px;text-transform:uppercase;letter-spacing:-0.5px;}
+    .hero-right h1 span{color:rgb(88,196,243);}
+    .social-proof{display:flex;flex-direction:column;gap:10px;margin-bottom:36px;}
+    .proof-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:8px 14px;align-self:flex-start;}
+    .proof-badge-icon{font-size:15px;}
+    .proof-badge-text{font-size:13px;color:rgba(255,255,255,.75);font-weight:500;}
+    .proof-badge-text strong{color:#fff;}
+    .hero-cta{display:inline-block;background:rgb(88,196,243);color:#fff;font-weight:700;font-size:14px;padding:13px 28px;border-radius:6px;text-decoration:none;align-self:flex-start;transition:background .2s;letter-spacing:.3px;}
+    .hero-cta:hover{background:rgb(37,158,210);}
+
+    /* FOUNDERS */
+    .founders-section{display:grid;grid-template-columns:1fr 1fr;}
+    .founder-panel{position:relative;min-height:540px;overflow:hidden;display:flex;align-items:flex-end;}
+    .founder-panel:first-child{border-right:2px solid rgb(219,234,241);}
+    .founder-bg-placeholder{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:80px;background:rgb(210,228,238);background-size:cover;background-position:center top;}
+    .founder-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.85) 0%,rgba(0,0,0,.3) 45%,transparent 65%);}
+    .founder-info{position:relative;z-index:2;padding:28px 32px;width:100%;}
+    .founder-name{font-family:'Barlow Condensed',sans-serif;font-size:28px;font-weight:800;color:#fff;margin-bottom:2px;text-transform:uppercase;letter-spacing:.5px;}
+    .founder-meta{display:flex;align-items:center;gap:10px;margin-bottom:14px;flex-wrap:wrap;}
+    .founder-role{font-size:13px;color:rgba(255,255,255,.65);}
+    .founder-pb{display:inline-flex;align-items:center;gap:5px;background:rgba(88,196,243,.25);border:1px solid rgba(88,196,243,.5);border-radius:6px;padding:3px 10px;}
+    .founder-pb-label{font-size:10px;color:rgba(88,196,243,.8);font-weight:700;letter-spacing:1px;text-transform:uppercase;}
+    .founder-pb-value{font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:800;color:rgb(88,196,243);letter-spacing:.5px;}
+    .founder-ig{display:inline-flex;align-items:center;gap:6px;text-decoration:none;color:#fff;font-size:13px;background:rgba(255,255,255,.15);backdrop-filter:blur(4px);padding:6px 14px;border-radius:20px;transition:background .2s;}
+    .founder-ig:hover{background:rgba(255,255,255,.28);}
+    .founder-ig img{width:14px;height:14px;filter:brightness(10);}
+
+    /* CONTENT SECTIONS */
+    .content-section{display:grid;grid-template-columns:1fr 1fr;min-height:380px;}
+    .content-section.reverse{direction:rtl;}
+    .content-section.reverse>*{direction:ltr;}
+    .content-text{background:#fff;display:flex;flex-direction:column;justify-content:center;padding:60px 72px;}
+    .section-tag{font-size:14px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgb(37,158,210);margin-bottom:12px;}
+    .content-text h2{font-family:'Barlow Condensed',sans-serif;font-size:38px;font-weight:800;color:#111;margin-bottom:18px;line-height:1.15;text-transform:uppercase;}
+    .content-text p{font-size:15px;color:#555;line-height:1.8;}
+    .content-text p+p{margin-top:14px;}
+
+    /* FULL WIDTH TEXT */
+    .full-text-section{background:#fff;padding:72px 0;}
+    .full-text-section--alt{background:rgb(219,234,241);}
+    .full-text-inner{max-width:960px;margin:0 auto;padding:0 72px;}
+    .full-text-cols{display:grid;grid-template-columns:1fr 1fr;gap:40px;}
+    .full-text-cols p{font-size:15px;color:#555;line-height:1.8;}
+    .full-text-inner .section-tag{font-size:14px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgb(37,158,210);margin-bottom:12px;}
+    .full-text-inner h2{font-family:'Barlow Condensed',sans-serif;font-size:38px;font-weight:800;color:#111;margin-bottom:28px;line-height:1.15;text-transform:uppercase;}
+
+    /* PHOTO PANEL */
+    .photo-panel{position:relative;overflow:hidden;background:rgb(210,228,238);}
+    .panel-photo{width:100%;height:100%;object-fit:cover;display:block;}
+
+    /* CTA */
+    .cta-full{background:rgb(88,196,243);padding:72px 48px;text-align:center;}
+    .cta-full h2{font-family:'Barlow Condensed',sans-serif;font-size:36px;font-weight:800;color:#fff;margin-bottom:10px;text-transform:uppercase;letter-spacing:.3px;}
+    .cta-full p{font-size:16px;color:rgba(255,255,255,.88);margin-bottom:28px;}
+    .cta-full-btn{display:inline-block;background:#fff;color:rgb(37,158,210);font-weight:700;font-size:15px;padding:14px 36px;border-radius:6px;text-decoration:none;transition:opacity .2s;letter-spacing:.2px;}
+    .cta-full-btn:hover{opacity:.88;}
+
+    /* FOLLOW */
+    .follow-section{background:#fff;padding:40px 48px;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;}
+    .follow-label{font-size:13px;font-weight:700;color:#888;letter-spacing:1px;text-transform:uppercase;margin-right:4px;}
+    .follow-link{display:inline-flex;align-items:center;gap:6px;text-decoration:none;color:#333;font-size:13px;background:rgb(219,234,241);padding:8px 16px;border-radius:20px;transition:background .2s,color .2s;}
+    .follow-link:hover{background:rgb(88,196,243);color:#fff;}
+    .follow-link img{width:14px;height:14px;}
+    .follow-divider{width:1px;height:28px;background:#ddd;margin:0 8px;}
+    .contact-link{display:inline-flex;align-items:center;gap:6px;text-decoration:none;color:#333;font-size:13px;background:rgb(219,234,241);padding:8px 16px;border-radius:20px;transition:background .2s,color .2s;}
+    .contact-link:hover{background:rgb(88,196,243);color:#fff;}
+
+    /* MOBILE */
+    @media(max-width:768px){
+      .navbar{padding:10px 16px;}
+      .nav-links{position:static;transform:none;}
+      .nav-logo-slogan{display:none;}
+      .hero{grid-template-columns:1fr;min-height:auto;}
+      .hero-left{min-height:260px;}
+      .hero-right{padding:36px 24px;}
+      .hero-right h1{font-size:44px;}
+      .founders-section{grid-template-columns:1fr;}
+      .founder-panel{min-height:360px;}
+      .founder-panel:first-child{border-right:none;border-bottom:2px solid rgb(219,234,241);}
+      .content-section{grid-template-columns:1fr;}
+      .content-section.reverse{direction:ltr;}
+      .full-text-inner{padding:0 24px;}
+      .full-text-cols{grid-template-columns:1fr;}
+      .full-text-inner h2{font-size:28px;}
+      .photo-panel{min-height:220px;}
+      .content-text{padding:36px 24px;}
+      .content-text h2{font-size:30px;}
+      .cta-full{padding:48px 24px;}
+      .cta-full h2{font-size:26px;}
+      .follow-section{padding:28px 16px;}
+      .follow-divider{display:none;}
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar">
+  <a href="index.html" class="nav-logo">
+    <img src="logo.png" alt="Logo">
+    <div class="nav-logo-text">
+      <span class="nav-logo-name">Sprint Calculator</span>
+      <span class="nav-logo-slogan">Built by athletes. For athletes.</span>
+    </div>
+  </a>
+  <div class="nav-links">
+    <a href="index.html" class="nav-link">Calculator</a>
+    <!-- Gear: estil neutre perquè NO estem a Gear -->
+    <div class="nav-dropdown">
+      <a href="gear.html" class="nav-dropdown-trigger">Gear</a>
+      <div class="nav-dropdown-menu">
+        <div class="nav-dropdown-menu-inner">
+          <a href="gear.html#timing" class="nav-dropdown-item">Timing</a>
+          <a href="gear.html#performance-tech" class="nav-dropdown-item">Performance Tech</a>
+          <a href="gear.html#recovery" class="nav-dropdown-item">Recovery</a>
+        </div>
+      </div>
+    </div>
+    <a href="about.html" class="nav-link active">About</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-photo-bg" style="background-image:url('barcelona.jpg');background-size:120%;background-position:45%;"></div>
+    <div class="hero-photo-overlay"></div>
+  </div>
+  <div class="hero-right">
+    <span class="hero-tag">Barcelona, Spain · Est. 2024</span>
+    <h1>Built by<br>athletes.<br><span>For athletes.</span></h1>
+    <div class="social-proof">
+      <div class="proof-badge">
+        <span class="proof-badge-icon">📈</span>
+        <span class="proof-badge-text">Used <strong>300+ times daily</strong> by athletes worldwide</span>
+      </div>
+      <div class="proof-badge">
+        <span class="proof-badge-icon">🥇</span>
+        <span class="proof-badge-text"><strong>#1 Google result</strong> for sprint predictor</span>
+      </div>
+    </div>
+    <a class="hero-cta" href="index.html">Start predicting your sprint performance →</a>
+  </div>
+</section>
+
+<section class="founders-section">
+  <div class="founder-panel">
+    <div class="founder-bg-placeholder" style="background-image:url('albert.jpg');background-size:150%;background-position:center 29%;"></div>
+    <div class="founder-overlay"></div>
+    <div class="founder-info">
+      <div class="founder-name">Albert Romeo</div>
+      <div class="founder-meta">
+        <span class="founder-role">Sprinter · Co-founder</span>
+        <div class="founder-pb">
+          <span class="founder-pb-label">100m PB</span>
+          <span class="founder-pb-value">10.39</span>
+        </div>
+      </div>
+      <a class="founder-ig" href="https://www.instagram.com/alberomeo_" target="_blank">
+        <img src="instagram.png" alt="ig"> @alberomeo_
+      </a>
+    </div>
+  </div>
+  <div class="founder-panel">
+    <div class="founder-bg-placeholder" style="background-image:url('adria.jpg');background-size:cover;background-position:right bottom;"></div>
+    <div class="founder-overlay"></div>
+    <div class="founder-info">
+      <div class="founder-name">Adrià Alfonso</div>
+      <div class="founder-meta">
+        <span class="founder-role">Sprinter · Co-founder</span>
+        <div class="founder-pb">
+          <span class="founder-pb-label">200m PB</span>
+          <span class="founder-pb-value">20.55</span>
+        </div>
+      </div>
+      <a class="founder-ig" href="https://www.instagram.com/adria.am" target="_blank">
+        <img src="instagram.png" alt="ig"> @adria.am
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="full-text-section">
+  <div class="full-text-inner">
+    <div class="section-tag">Who We Are</div>
+    <h2>Two athletes.<br>One idea.</h2>
+    <div class="full-text-cols">
+      <p>We are Albert and Adrià — two high-level sprinters from Barcelona and Computer Science students who became obsessed with one question: <em>why is there no reliable tool to predict sprint performance?</em></p>
+      <p>We train, compete, and study the sport every day. Sprint Calculator was born out of that obsession — combining our technical background with our experience on the track to build something athletes can actually trust.</p>
+    </div>
+  </div>
+</section>
+
+<section class="content-section reverse">
+  <div class="content-text">
+    <div class="section-tag">How It Works</div>
+    <h2>The model<br>behind it.</h2>
+    <p>Sprint Calculator combines two complementary techniques. For single-input cases — such as converting a hand-timed mark to an electronic equivalent — we use simple linear regression, optimised for precision on sprint-specific data.</p>
+    <p>For multi-input predictions, we use <strong>Extreme Gradient Boosting (XGBoost)</strong>, trained on a database of approximately <strong>10,000 official 100m and 200m races</strong>. The result accurately distinguishes all types of sprinters and analyses individual performance trends.</p>
+  </div>
+  <div class="photo-panel">
+    <img src="mace.png" alt="How it works" class="panel-photo">
+  </div>
+</section>
+
+<section class="full-text-section full-text-section--alt">
+  <div class="full-text-inner">
+    <div class="section-tag">Our Mission</div>
+    <h2>Built to share<br>what works.</h2>
+    <div class="full-text-cols">
+      <p>Our goal is simple: to make high-level sprint knowledge accessible to every athlete. Everything on this platform — from the calculator to the tools we recommend — comes from our own experience as competitive sprinters.</p>
+      <p>We don't believe in guesswork or generic advice. Only what actually works on the track. Sprint Calculator is the tool we wish we had when we started — so we built it.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta-full">
+  <h2>If you're serious about sprinting,<br>you're in the right place.</h2>
+  <p>Join hundreds of athletes and coaches who use Sprint Calculator every day.</p>
+  <a class="cta-full-btn" href="index.html">Start predicting your sprint performance →</a>
+</section>
+
+<div class="follow-section">
+  <span class="follow-label">Follow us</span>
+  <a class="follow-link" href="https://www.instagram.com/sprintcalculator" target="_blank"><img src="instagram.png" alt="ig"> @sprintcalculator</a>
+  <a class="follow-link" href="https://www.instagram.com/alberomeo_" target="_blank"><img src="instagram.png" alt="ig"> @alberomeo_</a>
+  <a class="follow-link" href="https://www.instagram.com/adria.am" target="_blank"><img src="instagram.png" alt="ig"> @adria.am</a>
+  <div class="follow-divider"></div>
+  <span class="follow-label">Contact</span>
+  <a class="contact-link" href="mailto:sprintcalculator@gmail.com">✉️ sprintcalculator@gmail.com</a>
+</div>
+
+</body>
+</html>
