@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W5TJFTKC');</script>
+<!-- End Google Tag Manager -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About — Sprint Calculator</title>
@@ -26,10 +33,11 @@
     .nav-link{text-decoration:none;color:#444;font-size:14px;padding:7px 18px;border-radius:5px;transition:background-color .2s,color .2s;white-space:nowrap;}
     .nav-link:hover{background-color:rgb(219,234,241);color:#000;}
     .nav-link.active{background-color:rgb(88,196,243);color:#fff;font-weight:bold;}
+    /* Dropdown: estil neutre quan NO estem a Gear */
     .nav-dropdown{position:relative;display:inline-block;}
-    .nav-dropdown-trigger{text-decoration:none;color:#fff;font-size:14px;font-weight:bold;padding:7px 18px;border-radius:5px;background-color:rgb(88,196,243);cursor:pointer;display:inline-flex;align-items:center;gap:5px;transition:background .2s;}
-    .nav-dropdown-trigger:hover{background-color:rgb(37,158,210);}
-    .nav-dropdown-trigger::after{content:'▾';font-size:10px;opacity:.8;}
+    .nav-dropdown-trigger{text-decoration:none;color:#444;font-size:14px;padding:7px 18px;border-radius:5px;background:transparent;cursor:pointer;display:inline-flex;align-items:center;gap:5px;transition:background .2s,color .2s;}
+    .nav-dropdown-trigger:hover{background-color:rgb(219,234,241);color:#000;}
+    .nav-dropdown-trigger::after{content:'▾';font-size:10px;opacity:.6;}
     .nav-dropdown-menu{display:none;position:absolute;top:100%;left:50%;transform:translateX(-50%);padding-top:8px;z-index:200;min-width:200px;}
     .nav-dropdown-menu-inner{background:#fff;border-radius:8px;box-shadow:0 8px 24px rgba(0,0,0,.12);overflow:hidden;}
     .nav-dropdown:hover .nav-dropdown-menu{display:block;}
@@ -37,6 +45,8 @@
     .nav-dropdown-item:last-child{border-bottom:none;}
     .nav-dropdown-item:hover{background:rgb(219,234,241);color:rgb(37,158,210);}
     .anchor-target{scroll-margin-top:72px;}
+    .nav-policy{text-decoration:none;color:#999;font-size:12px;padding:7px 14px;border-radius:5px;transition:color .2s,background .2s;white-space:nowrap;}
+    .nav-policy:hover{color:#444;background-color:rgb(219,234,241);}
 
     /* HERO */
     .hero{margin-top:52px;display:grid;grid-template-columns:3fr 2fr;min-height:calc(100vh - 52px);}
@@ -140,7 +150,10 @@
   </style>
 </head>
 <body>
-
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TJFTKC"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 <nav class="navbar">
   <a href="index.html" class="nav-logo">
     <img src="logo.png" alt="Logo">
@@ -149,22 +162,38 @@
       <span class="nav-logo-slogan">Built by athletes. For athletes.</span>
     </div>
   </a>
+
   <div class="nav-links">
-    <a href="index.html" class="nav-link">Calculator</a>
+
+    <!-- 🔥 NOU DROPDOWN CALCULATORS -->
+    <div class="nav-dropdown">
+      <a href="index.html" class="nav-dropdown-trigger active">Calculators</a>
+      <div class="nav-dropdown-menu">
+        <div class="nav-dropdown-menu-inner">
+          <a href="index.html" class="nav-dropdown-item">Sprint Calculator</a>
+          <a href="conditions_converter.html" class="nav-dropdown-item">Conditions Converter</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- GEAR (igual que abans) -->
     <div class="nav-dropdown">
       <a href="gear.html" class="nav-dropdown-trigger">Gear</a>
       <div class="nav-dropdown-menu">
         <div class="nav-dropdown-menu-inner">
+          <a href="gear.html" class="nav-dropdown-item">All Gear</a>
           <a href="gear.html#timing" class="nav-dropdown-item">Timing</a>
           <a href="gear.html#performance-tech" class="nav-dropdown-item">Performance Tech</a>
           <a href="gear.html#recovery" class="nav-dropdown-item">Recovery</a>
         </div>
       </div>
     </div>
-    <a href="about.html" class="nav-link active">About</a>
-  </div>
-</nav>
 
+    <a href="about.html" class="nav-link">About</a>
+  </div>
+
+  <a href="privacy.html" class="nav-policy">Privacy Policy</a>
+</nav>  
 <section class="hero">
   <div class="hero-left">
     <div class="hero-photo-bg" style="background-image:url('barcelona.jpg');background-size:120%;background-position:45%;"></div>
@@ -200,9 +229,7 @@
           <span class="founder-pb-value">10.39</span>
         </div>
       </div>
-      <a class="founder-ig" href="https://www.instagram.com/alberomeo_" target="_blank">
-        <img src="instagram.png" alt="ig"> @alberomeo_
-      </a>
+
     </div>
   </div>
   <div class="founder-panel">
@@ -217,9 +244,7 @@
           <span class="founder-pb-value">20.55</span>
         </div>
       </div>
-      <a class="founder-ig" href="https://www.instagram.com/adria.am" target="_blank">
-        <img src="instagram.png" alt="ig"> @adria.am
-      </a>
+
     </div>
   </div>
 </section>

@@ -30,15 +30,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .nav-logo-name{font-size:15px;font-weight:bold;color:#000;}
     .nav-logo-slogan{font-size:10px;color:rgb(37,158,210);letter-spacing:.5px;}
     .nav-links{position:absolute;left:50%;transform:translateX(-50%);display:flex;gap:6px;align-items:center;}
-    .nav-link{text-decoration:none;color:#444;font-size:14px;font-weight:normal;padding:7px 18px;border-radius:5px;transition:background-color .2s,color .2s;white-space:nowrap;background:transparent;}
+    .nav-link{text-decoration:none;color:#444;font-size:14px;padding:7px 18px;border-radius:5px;transition:background-color .2s,color .2s;white-space:nowrap;}
     .nav-link:hover{background-color:rgb(219,234,241);color:#000;}
     .nav-link.active{background-color:rgb(88,196,243);color:#fff;font-weight:bold;}
+    /* Dropdown — estil neutre (no estem a Gear) */
     .nav-dropdown{position:relative;display:inline-block;}
-    .nav-dropdown-trigger{text-decoration:none;color:#444;font-size:14px;font-weight:normal;padding:7px 18px;border-radius:5px;background:transparent;cursor:pointer;display:inline-flex;align-items:center;gap:5px;transition:background .2s,color .2s;white-space:nowrap;}
+    .nav-dropdown-trigger{text-decoration:none;color:#444;font-size:14px;padding:7px 18px;border-radius:5px;background:transparent;cursor:pointer;display:inline-flex;align-items:center;gap:5px;transition:background .2s,color .2s;}
     .nav-dropdown-trigger:hover{background-color:rgb(219,234,241);color:#000;}
     .nav-dropdown-trigger::after{content:'▾';font-size:10px;opacity:.6;}
-    .nav-dropdown-trigger.active{background-color:rgb(88,196,243);color:#fff;font-weight:bold;}
-    .nav-dropdown-trigger.active::after{opacity:1;}
     .nav-dropdown-menu{display:none;position:absolute;top:100%;left:50%;transform:translateX(-50%);padding-top:8px;z-index:200;min-width:200px;}
     .nav-dropdown-menu-inner{background:#fff;border-radius:8px;box-shadow:0 8px 24px rgba(0,0,0,.12);overflow:hidden;}
     .nav-dropdown:hover .nav-dropdown-menu{display:block;}
@@ -47,7 +46,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .nav-dropdown-item:hover{background:rgb(219,234,241);color:rgb(37,158,210);}
     .nav-policy{text-decoration:none;color:#999;font-size:12px;padding:7px 14px;border-radius:5px;transition:color .2s,background .2s;white-space:nowrap;}
     .nav-policy:hover{color:#444;background-color:rgb(219,234,241);}
-    .nav-policy.active{color:rgb(37,158,210);font-weight:600;}
+
     @media(max-width:600px){
       .navbar{padding:10px 16px;}
       .nav-links{position:static;transform:none;}
@@ -70,8 +69,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </a>
 
   <div class="nav-links">
+
+    <!-- 🔥 NOU DROPDOWN CALCULATORS -->
     <div class="nav-dropdown">
-      <!-- ACTIVE: estem a Calculators -->
       <a href="index.html" class="nav-dropdown-trigger active">Calculators</a>
       <div class="nav-dropdown-menu">
         <div class="nav-dropdown-menu-inner">
@@ -81,6 +81,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
 
+    <!-- GEAR (igual que abans) -->
     <div class="nav-dropdown">
       <a href="gear.html" class="nav-dropdown-trigger">Gear</a>
       <div class="nav-dropdown-menu">
@@ -97,8 +98,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 
   <a href="privacy.html" class="nav-policy">Privacy Policy</a>
-</nav>
-
+</nav>  
   <div class="container">
     <img src="logo.png" alt="Logo" class="logo">
     <h1>Sprint Calculator</h1>
