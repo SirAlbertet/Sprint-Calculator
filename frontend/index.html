@@ -17,27 +17,29 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <title>Sprint Calculator</title>
   <link rel="icon" href="logo.png" type="image/png">
   <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8609690760733686" crossorigin="anonymous"></script>
   <meta name="google-adsense-account" content="ca-pub-8609690760733686">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XCGHYN2HE0"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XCGHYN2HE0');</script>
   <style>
+    *{box-sizing:border-box;margin:0;padding:0;}
+
     /* ── NAVBAR ── */
-    .navbar{position:fixed;top:0;left:0;width:100%;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.1);display:flex;align-items:center;justify-content:space-between;padding:10px 32px;box-sizing:border-box;z-index:1000;}
-    .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:#000;}
-    .nav-logo img{width:28px;height:28px;}
-    .nav-logo-text{display:flex;flex-direction:column;line-height:1.2;}
-    .nav-logo-name{font-size:15px;font-weight:bold;color:#000;}
-    .nav-logo-slogan{font-size:10px;color:rgb(37,158,210);letter-spacing:.5px;}
+    .navbar{position:fixed;top:0;left:0;width:100%;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.1);display:flex;align-items:center;justify-content:space-between;padding:10px 32px;z-index:1000;}
+    .nav-logo{display:flex;align-items:center;text-decoration:none;}
+    .nav-logo img{width:32px;height:32px;}
     .nav-links{position:absolute;left:50%;transform:translateX(-50%);display:flex;gap:6px;align-items:center;}
-    .nav-link{text-decoration:none;color:#444;font-size:14px;font-weight:normal;padding:7px 18px;border-radius:5px;transition:background-color .2s,color .2s;white-space:nowrap;background:transparent;}
-    .nav-link:hover{background-color:rgb(219,234,241);color:#000;}
-    .nav-link.active{background-color:rgb(88,196,243);color:#fff;font-weight:bold;}
+    .nav-link{text-decoration:none;color:#444;font-size:14px;font-weight:normal;padding:7px 18px;border-radius:5px;transition:background .2s,color .2s;white-space:nowrap;background:transparent;}
+    .nav-link:hover{background:rgb(219,234,241);color:#000;}
+    .nav-link.active{background:rgb(88,196,243);color:#fff;font-weight:bold;}
     .nav-dropdown{position:relative;display:inline-block;}
     .nav-dropdown-trigger{text-decoration:none;color:#444;font-size:14px;font-weight:normal;padding:7px 18px;border-radius:5px;background:transparent;cursor:pointer;display:inline-flex;align-items:center;gap:5px;transition:background .2s,color .2s;white-space:nowrap;}
-    .nav-dropdown-trigger:hover{background-color:rgb(219,234,241);color:#000;}
+    .nav-dropdown-trigger:hover{background:rgb(219,234,241);color:#000;}
     .nav-dropdown-trigger::after{content:'▾';font-size:10px;opacity:.6;}
-    .nav-dropdown-trigger.active{background-color:rgb(88,196,243);color:#fff;font-weight:bold;}
+    .nav-dropdown-trigger.active{background:rgb(88,196,243);color:#fff;font-weight:bold;}
     .nav-dropdown-trigger.active::after{opacity:1;}
     .nav-dropdown-menu{display:none;position:absolute;top:100%;left:50%;transform:translateX(-50%);padding-top:8px;z-index:200;min-width:200px;}
     .nav-dropdown-menu-inner{background:#fff;border-radius:8px;box-shadow:0 8px 24px rgba(0,0,0,.12);overflow:hidden;}
@@ -45,13 +47,33 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .nav-dropdown-item{display:block;text-decoration:none;color:#333;font-size:13px;font-weight:600;padding:11px 18px;transition:background .15s,color .15s;border-bottom:1px solid rgba(0,0,0,.05);}
     .nav-dropdown-item:last-child{border-bottom:none;}
     .nav-dropdown-item:hover{background:rgb(219,234,241);color:rgb(37,158,210);}
+    .nav-legal{display:flex;align-items:center;gap:4px;}
     .nav-policy{text-decoration:none;color:#999;font-size:12px;padding:7px 14px;border-radius:5px;transition:color .2s,background .2s;white-space:nowrap;}
-    .nav-policy:hover{color:#444;background-color:rgb(219,234,241);}
+    .nav-policy:hover{color:#444;background:rgb(219,234,241);}
     .nav-policy.active{color:rgb(37,158,210);font-weight:600;}
-    @media(max-width:600px){
+    .nav-legal-sep{color:#ddd;font-size:12px;user-select:none;}
+
+    /* Hamburger — ocult en desktop */
+    .nav-hamburger{display:none;background:none;border:none;cursor:pointer;padding:6px;border-radius:5px;transition:background .2s;}
+    .nav-hamburger:hover{background:rgb(219,234,241);}
+    .nav-hamburger span{display:block;width:22px;height:2px;background:#444;border-radius:2px;}
+    .nav-hamburger span+span{margin-top:5px;}
+
+    /* Menú mòbil */
+    .nav-mobile-menu{display:none;position:fixed;top:52px;left:0;width:100%;background:#fff;box-shadow:0 4px 16px rgba(0,0,0,.12);z-index:999;flex-direction:column;padding:8px 0 12px;}
+    .nav-mobile-menu.open{display:flex;}
+    .nav-mobile-item{text-decoration:none;color:#333;font-size:15px;font-weight:600;padding:13px 24px;border-bottom:1px solid rgba(0,0,0,.04);transition:background .15s;}
+    .nav-mobile-item:hover{background:rgb(219,234,241);}
+    .nav-mobile-item.active{color:rgb(88,196,243);}
+    .nav-mobile-sep{height:1px;background:rgba(0,0,0,.06);margin:4px 0;}
+    .nav-mobile-legal{text-decoration:none;color:#999;font-size:13px;padding:10px 24px;display:block;transition:background .15s;}
+    .nav-mobile-legal:hover{background:rgb(219,234,241);}
+
+    @media(max-width:768px){
       .navbar{padding:10px 16px;}
-      .nav-links{position:static;transform:none;}
-      .nav-logo-slogan{display:none;}
+      .nav-links{display:none;}
+      .nav-legal{display:none;}
+      .nav-hamburger{display:flex;flex-direction:column;justify-content:center;}
     }
   </style>
 </head>
@@ -59,45 +81,53 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TJFTKC"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+
 <nav class="navbar">
   <a href="index.html" class="nav-logo">
-    <img src="logo.png" alt="Logo">
-    <div class="nav-logo-text">
-      <span class="nav-logo-name">Sprint Calculator</span>
-      <span class="nav-logo-slogan">Built by athletes. For athletes.</span>
-    </div>
+    <img src="logo.png" alt="Sprint Calculator">
   </a>
-
   <div class="nav-links">
     <div class="nav-dropdown">
-      <!-- ACTIVE: estem a Calculators -->
       <a href="index.html" class="nav-dropdown-trigger active">Calculators</a>
-      <div class="nav-dropdown-menu">
-        <div class="nav-dropdown-menu-inner">
-          <a href="index.html" class="nav-dropdown-item">Sprint Calculator</a>
-          <a href="conditions_converter.html" class="nav-dropdown-item">Conditions Converter</a>
-        </div>
-      </div>
+      <div class="nav-dropdown-menu"><div class="nav-dropdown-menu-inner">
+        <a href="index.html" class="nav-dropdown-item">Sprint Calculator</a>
+        <a href="conditions_converter.html" class="nav-dropdown-item">Conditions Converter</a>
+      </div></div>
     </div>
-
     <div class="nav-dropdown">
       <a href="gear.html" class="nav-dropdown-trigger">Gear</a>
-      <div class="nav-dropdown-menu">
-        <div class="nav-dropdown-menu-inner">
-          <a href="gear.html" class="nav-dropdown-item">All Gear</a>
-          <a href="gear.html#timing" class="nav-dropdown-item">Timing</a>
-          <a href="gear.html#performance-tech" class="nav-dropdown-item">Performance Tech</a>
-          <a href="gear.html#recovery" class="nav-dropdown-item">Recovery</a>
-        </div>
-      </div>
+      <div class="nav-dropdown-menu"><div class="nav-dropdown-menu-inner">
+        <a href="gear.html" class="nav-dropdown-item">All Gear</a>
+        <a href="gear.html#timing" class="nav-dropdown-item">Timing</a>
+        <a href="gear.html#performance-tech" class="nav-dropdown-item">Performance Tech</a>
+        <a href="gear.html#recovery" class="nav-dropdown-item">Recovery</a>
+      </div></div>
     </div>
-
     <a href="about.html" class="nav-link">About</a>
   </div>
-
-  <a href="privacy.html" class="nav-policy">Privacy Policy</a>
+  <div class="nav-legal">
+    <a href="privacy.html" class="nav-policy">Privacy</a>
+    <span class="nav-legal-sep">·</span>
+    <a href="terms_cond.html" class="nav-policy">Terms</a>
+  </div>
+  <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<div class="nav-mobile-menu" id="mobileMenu">
+  <a href="index.html" class="nav-mobile-item active">Calculators</a>
+  <a href="index.html" class="nav-mobile-item" style="padding-left:36px;font-weight:400;font-size:14px;">Sprint Calculator</a>
+  <a href="conditions_converter.html" class="nav-mobile-item" style="padding-left:36px;font-weight:400;font-size:14px;">Conditions Converter</a>
+  <a href="gear.html" class="nav-mobile-item">Gear</a>
+  <a href="gear.html#timing" class="nav-mobile-item" style="padding-left:36px;font-weight:400;font-size:14px;">Timing</a>
+  <a href="gear.html#performance-tech" class="nav-mobile-item" style="padding-left:36px;font-weight:400;font-size:14px;">Performance Tech</a>
+  <a href="gear.html#recovery" class="nav-mobile-item" style="padding-left:36px;font-weight:400;font-size:14px;">Recovery</a>
+  <a href="about.html" class="nav-mobile-item">About</a>
+  <div class="nav-mobile-sep"></div>
+  <a href="privacy.html" class="nav-mobile-legal">Privacy Policy</a>
+  <a href="terms_cond.html" class="nav-mobile-legal">Terms & Conditions</a>
+</div>
 
   <div class="container">
     <img src="logo.png" alt="Logo" class="logo">
@@ -156,6 +186,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
   </div>
-  <script src="script.js"></script>
+
+<script src="script.js"></script>
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
+</script>
 </body>
 </html>

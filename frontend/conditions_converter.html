@@ -14,48 +14,32 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <link rel="icon" href="logo.png" type="image/png">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XCGHYN2HE0"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XCGHYN2HE0');</script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8609690760733686" crossorigin="anonymous"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
-      --blue:    rgb(88, 196, 243);
-      --blue-dk: rgb(37, 158, 210);
-      --bg:      rgb(219, 234, 241);
-      --dark:    #1c2b35;
-      --white:   #ffffff;
-      --text:    #111;
-      --muted:   #666;
+      --blue: rgb(88,196,243); --blue-dk: rgb(37,158,210);
+      --bg: rgb(219,234,241); --dark: #1c2b35;
+      --white: #ffffff; --text: #111; --muted: #666;
     }
-
-    body {
-      font-family: 'Barlow', sans-serif;
-      background: var(--bg);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 84px 24px 48px; /* top 84px per deixar espai a la navbar fixa */
-    }
-
+    body { font-family:'Barlow',sans-serif; background:var(--bg); min-height:100vh; display:flex; flex-direction:column; align-items:center; padding:84px 24px 48px; }
+ 
     /* ── NAVBAR ── */
-    .navbar{position:fixed;top:0;left:0;width:100%;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.1);display:flex;align-items:center;justify-content:space-between;padding:10px 32px;box-sizing:border-box;z-index:1000;}
-    .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:#000;}
-    .nav-logo img{width:28px;height:28px;}
-    .nav-logo-text{display:flex;flex-direction:column;line-height:1.2;}
-    .nav-logo-name{font-size:15px;font-weight:bold;color:#000;}
-    .nav-logo-slogan{font-size:10px;color:rgb(37,158,210);letter-spacing:.5px;}
+    .navbar{position:fixed;top:0;left:0;width:100%;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.1);display:flex;align-items:center;justify-content:space-between;padding:10px 32px;z-index:1000;}
+    .nav-logo{display:flex;align-items:center;text-decoration:none;}
+    .nav-logo img{width:32px;height:32px;}
     .nav-links{position:absolute;left:50%;transform:translateX(-50%);display:flex;gap:6px;align-items:center;}
-    .nav-link{text-decoration:none;color:#444;font-size:14px;font-weight:normal;padding:7px 18px;border-radius:5px;transition:background-color .2s,color .2s;white-space:nowrap;background:transparent;}
-    .nav-link:hover{background-color:rgb(219,234,241);color:#000;}
-    .nav-link.active{background-color:rgb(88,196,243);color:#fff;font-weight:bold;}
+    .nav-link{text-decoration:none;color:#444;font-size:14px;font-weight:normal;padding:7px 18px;border-radius:5px;transition:background .2s,color .2s;white-space:nowrap;background:transparent;}
+    .nav-link:hover{background:rgb(219,234,241);color:#000;}
+    .nav-link.active{background:rgb(88,196,243);color:#fff;font-weight:bold;}
     .nav-dropdown{position:relative;display:inline-block;}
     .nav-dropdown-trigger{text-decoration:none;color:#444;font-size:14px;font-weight:normal;padding:7px 18px;border-radius:5px;background:transparent;cursor:pointer;display:inline-flex;align-items:center;gap:5px;transition:background .2s,color .2s;white-space:nowrap;}
-    .nav-dropdown-trigger:hover{background-color:rgb(219,234,241);color:#000;}
+    .nav-dropdown-trigger:hover{background:rgb(219,234,241);color:#000;}
     .nav-dropdown-trigger::after{content:'▾';font-size:10px;opacity:.6;}
-    .nav-dropdown-trigger.active{background-color:rgb(88,196,243);color:#fff;font-weight:bold;}
+    .nav-dropdown-trigger.active{background:rgb(88,196,243);color:#fff;font-weight:bold;}
     .nav-dropdown-trigger.active::after{opacity:1;}
     .nav-dropdown-menu{display:none;position:absolute;top:100%;left:50%;transform:translateX(-50%);padding-top:8px;z-index:200;min-width:200px;}
     .nav-dropdown-menu-inner{background:#fff;border-radius:8px;box-shadow:0 8px 24px rgba(0,0,0,.12);overflow:hidden;}
@@ -63,333 +47,166 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .nav-dropdown-item{display:block;text-decoration:none;color:#333;font-size:13px;font-weight:600;padding:11px 18px;transition:background .15s,color .15s;border-bottom:1px solid rgba(0,0,0,.05);}
     .nav-dropdown-item:last-child{border-bottom:none;}
     .nav-dropdown-item:hover{background:rgb(219,234,241);color:rgb(37,158,210);}
+    .nav-legal{display:flex;align-items:center;gap:4px;}
     .nav-policy{text-decoration:none;color:#999;font-size:12px;padding:7px 14px;border-radius:5px;transition:color .2s,background .2s;white-space:nowrap;}
-    .nav-policy:hover{color:#444;background-color:rgb(219,234,241);}
+    .nav-policy:hover{color:#444;background:rgb(219,234,241);}
     .nav-policy.active{color:rgb(37,158,210);font-weight:600;}
-    @media(max-width:600px){
+    .nav-legal-sep{color:#ddd;font-size:12px;user-select:none;}
+    .nav-hamburger{display:none;background:none;border:none;cursor:pointer;padding:6px;border-radius:5px;transition:background .2s;}
+    .nav-hamburger:hover{background:rgb(219,234,241);}
+    .nav-hamburger span{display:block;width:22px;height:2px;background:#444;border-radius:2px;}
+    .nav-hamburger span+span{margin-top:5px;}
+    .nav-mobile-menu{display:none;position:fixed;top:52px;left:0;width:100%;background:#fff;box-shadow:0 4px 16px rgba(0,0,0,.12);z-index:999;flex-direction:column;padding:8px 0 12px;}
+    .nav-mobile-menu.open{display:flex;}
+    .nav-mobile-item{text-decoration:none;color:#333;font-size:15px;font-weight:600;padding:13px 24px;border-bottom:1px solid rgba(0,0,0,.04);transition:background .15s;}
+    .nav-mobile-item:hover{background:rgb(219,234,241);}
+    .nav-mobile-item.active{color:rgb(88,196,243);}
+    .nav-mobile-sep{height:1px;background:rgba(0,0,0,.06);margin:4px 0;}
+    .nav-mobile-legal{text-decoration:none;color:#999;font-size:13px;padding:10px 24px;display:block;transition:background .15s;}
+    .nav-mobile-legal:hover{background:rgb(219,234,241);}
+    @media(max-width:768px){
       .navbar{padding:10px 16px;}
-      .nav-links{position:static;transform:none;}
-      .nav-logo-slogan{display:none;}
+      .nav-links{display:none;}
+      .nav-legal{display:none;}
+      .nav-hamburger{display:flex;flex-direction:column;justify-content:center;}
     }
-
-    /* ── HEADER ── */
-    .header { text-align: center; margin-bottom: 24px; }
-    .header .tag {
-      display: inline-block;
-      background: rgba(88,196,243,.18);
-      color: var(--blue-dk);
-      font-size: 11px; font-weight: 700;
-      letter-spacing: 2px; text-transform: uppercase;
-      padding: 4px 12px; border-radius: 20px; margin-bottom: 8px;
-    }
-    .header h1 {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 42px; font-weight: 800;
-      text-transform: uppercase; color: var(--dark);
-      line-height: 1.0; letter-spacing: -0.5px;
-    }
-    .header h1 span { color: var(--blue); }
-    .header p { margin-top: 6px; font-size: 13px; color: var(--muted); }
-
-    /* ── CARD ── */
-    .card {
-      background: var(--white);
-      border-radius: 16px;
-      box-shadow: 0 4px 32px rgba(0,0,0,.10);
-      width: 100%; max-width: 720px;
-      padding: 28px 32px 24px;
-    }
-
-    /* ── SECTION LABELS ── */
-    .section-label {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 20px; font-weight: 800;
-      letter-spacing: .5px; text-transform: uppercase;
-      color: var(--dark); margin-bottom: 14px;
-    }
-    .section-label span { color: var(--blue); }
-
-    /* ── DIVIDER ── */
-    .divider { height: 1px; background: #e8f1f6; margin: 20px 0; }
-
-    /* ── GRIDS ── */
-    .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
-    .grid-4 { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 12px; }
-
-    /* ── FIELD ── */
-    .field label {
-      display: block; font-size: 11px; font-weight: 600;
-      color: var(--muted); margin-bottom: 5px;
-      text-transform: uppercase; letter-spacing: .8px;
-    }
-    .field input, .field select {
-      width: 100%; padding: 9px 12px;
-      border: 2px solid #e0eaf0; border-radius: 8px;
-      font-family: 'Barlow', sans-serif;
-      font-size: 14px; font-weight: 600; color: var(--text);
-      background: #f7fafc; outline: none;
-      transition: border-color .2s; appearance: none;
-    }
-    .field input:focus, .field select:focus {
-      border-color: var(--blue); background: #fff;
-    }
-    .field .opt-hint {
-      font-size: 10px; color: #bbb; margin-top: 3px;
-    }
-    .field-hidden { display: none; }
-
-    /* ── SLIDER ── */
-    .slider-wrap { margin-bottom: 14px; }
-    .slider-header {
-      display: flex; align-items: baseline;
-      justify-content: space-between; margin-bottom: 10px;
-    }
-    .wind-display {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 36px; font-weight: 800;
-      color: var(--dark); line-height: 1; transition: color .15s;
-    }
-    .wind-display.positive { color: #1a9e5a; }
-    .wind-display.negative { color: #d94040; }
-    .wind-display.zero     { color: var(--muted); }
-    .wind-label { font-size: 12px; color: var(--muted); font-weight: 500; }
-
-    .wind-slider {
-      -webkit-appearance: none; appearance: none;
-      width: 100%; height: 6px; border-radius: 3px;
-      background: linear-gradient(to right, #d94040, #e8f1f6 50%, #1a9e5a);
-      outline: none; cursor: pointer;
-    }
-    .wind-slider::-webkit-slider-thumb {
-      -webkit-appearance: none; appearance: none;
-      width: 24px; height: 24px; border-radius: 50%;
-      background: var(--white); border: 3px solid var(--blue);
-      box-shadow: 0 2px 8px rgba(88,196,243,.35); cursor: grab;
-      transition: transform .1s, box-shadow .15s;
-    }
-    .wind-slider::-webkit-slider-thumb:active {
-      cursor: grabbing; transform: scale(1.15);
-      box-shadow: 0 4px 16px rgba(88,196,243,.5);
-    }
-    .wind-slider::-moz-range-thumb {
-      width: 24px; height: 24px; border-radius: 50%;
-      background: var(--white); border: 3px solid var(--blue);
-      box-shadow: 0 2px 8px rgba(88,196,243,.35); cursor: grab;
-    }
-    .slider-ticks {
-      display: flex; justify-content: space-between;
-      margin-top: 6px; padding: 0 2px;
-    }
-    .slider-ticks span { font-size: 10px; color: #aaa; font-weight: 600; }
-
-    /* ── RESULT ── */
-    .result-row {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      align-items: center;
-      gap: 16px;
-    }
-    .result-main {
-      background: var(--dark);
-      border-radius: 12px; padding: 18px 24px;
-    }
-    .result-label {
-      font-size: 11px; font-weight: 700;
-      letter-spacing: 1.5px; text-transform: uppercase;
-      color: rgba(255,255,255,.5); margin-bottom: 2px;
-    }
-    .result-time {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 58px; font-weight: 800;
-      color: var(--white); line-height: 1; letter-spacing: -1px;
-      transition: all .12s ease;
-    }
-    .result-time .unit {
-      font-size: 22px; font-weight: 600;
-      opacity: .6; margin-left: 2px;
-    }
-
-    .breakdown {
-      display: flex; flex-direction: column; gap: 6px;
-    }
-    .delta-chip {
-      display: inline-flex; align-items: center; gap: 6px;
-      font-size: 12px; font-weight: 700;
-      padding: 5px 12px; border-radius: 20px;
-      white-space: nowrap;
-    }
-    .delta-chip.neutral  { background: rgba(0,0,0,.06); color: #777; }
-    .delta-chip.faster   { background: rgba(26,158,90,.12); color: #1a9e5a; }
-    .delta-chip.slower   { background: rgba(217,64,64,.12); color: #d94040; }
-
-    .legal-badge {
-      display: inline-flex; align-items: center; gap: 6px;
-      font-size: 11px; font-weight: 700;
-      letter-spacing: .8px; text-transform: uppercase;
-      padding: 4px 12px; border-radius: 20px; margin-top: 10px;
-    }
-    .legal-badge.legal   { background: rgba(74,222,128,.15); color: #1a9e5a; }
-    .legal-badge.illegal { background: rgba(248,113,113,.15); color: #d94040; }
-
-    /* ── CITATION ── */
-    .citation {
-      margin-top: 20px; font-size: 10px;
-      color: #bbb; text-align: center; line-height: 1.6;
-    }
-    .citation a { color: var(--blue-dk); text-decoration: none; }
-
-    /* ── RESPONSIVE ── */
-    @media(max-width: 600px) {
-      .card { padding: 20px 16px 18px; }
-      .grid-3 { grid-template-columns: 1fr 1fr; }
-      .grid-4 { grid-template-columns: 1fr 1fr; }
-      .header h1 { font-size: 34px; }
-      .result-row { grid-template-columns: 1fr; }
-      .result-time { font-size: 48px; }
-      .breakdown { flex-direction: row; flex-wrap: wrap; }
+ 
+    /* ── CONTINGUT ── */
+    .header{text-align:center;margin-bottom:24px;}
+    .header .tag{display:inline-block;background:rgba(88,196,243,.18);color:var(--blue-dk);font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:4px 12px;border-radius:20px;margin-bottom:8px;}
+    .header h1{font-family:'Barlow Condensed',sans-serif;font-size:42px;font-weight:800;text-transform:uppercase;color:var(--dark);line-height:1.0;letter-spacing:-0.5px;}
+    .header h1 span{color:var(--blue);}
+    .header p{margin-top:6px;font-size:13px;color:var(--muted);}
+    .card{background:var(--white);border-radius:16px;box-shadow:0 4px 32px rgba(0,0,0,.10);width:100%;max-width:720px;padding:28px 32px 24px;}
+    .section-label{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;color:var(--dark);margin-bottom:14px;}
+    .section-label span{color:var(--blue);}
+    .divider{height:1px;background:#e8f1f6;margin:20px 0;}
+    .grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;}
+    .grid-4{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:12px;}
+    .field label{display:block;font-size:11px;font-weight:600;color:var(--muted);margin-bottom:5px;text-transform:uppercase;letter-spacing:.8px;}
+    .field input,.field select{width:100%;padding:9px 12px;border:2px solid #e0eaf0;border-radius:8px;font-family:'Barlow',sans-serif;font-size:14px;font-weight:600;color:var(--text);background:#f7fafc;outline:none;transition:border-color .2s;appearance:none;}
+    .field input:focus,.field select:focus{border-color:var(--blue);background:#fff;}
+    .field .opt-hint{font-size:10px;color:#bbb;margin-top:3px;}
+    .field-hidden{display:none;}
+    .slider-wrap{margin-bottom:14px;}
+    .slider-header{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:10px;}
+    .wind-display{font-family:'Barlow Condensed',sans-serif;font-size:36px;font-weight:800;color:var(--dark);line-height:1;transition:color .15s;}
+    .wind-display.positive{color:#1a9e5a;}
+    .wind-display.negative{color:#d94040;}
+    .wind-display.zero{color:var(--muted);}
+    .wind-label{font-size:12px;color:var(--muted);font-weight:500;}
+    .wind-slider{-webkit-appearance:none;appearance:none;width:100%;height:6px;border-radius:3px;background:linear-gradient(to right,#d94040,#e8f1f6 50%,#1a9e5a);outline:none;cursor:pointer;}
+    .wind-slider::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:24px;height:24px;border-radius:50%;background:var(--white);border:3px solid var(--blue);box-shadow:0 2px 8px rgba(88,196,243,.35);cursor:grab;transition:transform .1s,box-shadow .15s;}
+    .wind-slider::-webkit-slider-thumb:active{cursor:grabbing;transform:scale(1.15);box-shadow:0 4px 16px rgba(88,196,243,.5);}
+    .wind-slider::-moz-range-thumb{width:24px;height:24px;border-radius:50%;background:var(--white);border:3px solid var(--blue);box-shadow:0 2px 8px rgba(88,196,243,.35);cursor:grab;}
+    .slider-ticks{display:flex;justify-content:space-between;margin-top:6px;padding:0 2px;}
+    .slider-ticks span{font-size:10px;color:#aaa;font-weight:600;}
+    .result-row{display:grid;grid-template-columns:1fr auto;align-items:center;gap:16px;}
+    .result-main{background:var(--dark);border-radius:12px;padding:18px 24px;}
+    .result-label{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:2px;}
+    .result-time{font-family:'Barlow Condensed',sans-serif;font-size:58px;font-weight:800;color:var(--white);line-height:1;letter-spacing:-1px;transition:all .12s ease;}
+    .result-time .unit{font-size:22px;font-weight:600;opacity:.6;margin-left:2px;}
+    .breakdown{display:flex;flex-direction:column;gap:6px;}
+    .delta-chip{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;padding:5px 12px;border-radius:20px;white-space:nowrap;}
+    .delta-chip.neutral{background:rgba(0,0,0,.06);color:#777;}
+    .delta-chip.faster{background:rgba(26,158,90,.12);color:#1a9e5a;}
+    .delta-chip.slower{background:rgba(217,64,64,.12);color:#d94040;}
+    .legal-badge{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:4px 12px;border-radius:20px;margin-top:10px;}
+    .legal-badge.legal{background:rgba(74,222,128,.15);color:#1a9e5a;}
+    .legal-badge.illegal{background:rgba(248,113,113,.15);color:#d94040;}
+    .citation{margin-top:20px;font-size:10px;color:#bbb;text-align:center;line-height:1.6;}
+    .citation a{color:var(--blue-dk);text-decoration:none;}
+    @media(max-width:600px){
+      .card{padding:20px 16px 18px;}
+      .grid-3{grid-template-columns:1fr 1fr;}
+      .grid-4{grid-template-columns:1fr 1fr;}
+      .header h1{font-size:34px;}
+      .result-row{grid-template-columns:1fr;}
+      .result-time{font-size:48px;}
+      .breakdown{flex-direction:row;flex-wrap:wrap;}
     }
   </style>
 </head>
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TJFTKC"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TJFTKC" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+ 
 <nav class="navbar">
-  <a href="index.html" class="nav-logo">
-    <img src="logo.png" alt="Logo">
-    <div class="nav-logo-text">
-      <span class="nav-logo-name">Sprint Calculator</span>
-      <span class="nav-logo-slogan">Built by athletes. For athletes.</span>
-    </div>
-  </a>
-
+  <a href="index.html" class="nav-logo"><img src="logo.png" alt="Sprint Calculator"></a>
   <div class="nav-links">
     <div class="nav-dropdown">
-      <!-- ACTIVE: estem dins de Calculators (conditions_converter) -->
       <a href="index.html" class="nav-dropdown-trigger active">Calculators</a>
-      <div class="nav-dropdown-menu">
-        <div class="nav-dropdown-menu-inner">
-          <a href="index.html" class="nav-dropdown-item">Sprint Calculator</a>
-          <a href="conditions_converter.html" class="nav-dropdown-item">Conditions Converter</a>
-        </div>
-      </div>
+      <div class="nav-dropdown-menu"><div class="nav-dropdown-menu-inner">
+        <a href="index.html" class="nav-dropdown-item">Sprint Calculator</a>
+        <a href="conditions_converter.html" class="nav-dropdown-item">Conditions Converter</a>
+      </div></div>
     </div>
-
     <div class="nav-dropdown">
       <a href="gear.html" class="nav-dropdown-trigger">Gear</a>
-      <div class="nav-dropdown-menu">
-        <div class="nav-dropdown-menu-inner">
-          <a href="gear.html" class="nav-dropdown-item">All Gear</a>
-          <a href="gear.html#timing" class="nav-dropdown-item">Timing</a>
-          <a href="gear.html#performance-tech" class="nav-dropdown-item">Performance Tech</a>
-          <a href="gear.html#recovery" class="nav-dropdown-item">Recovery</a>
-        </div>
-      </div>
+      <div class="nav-dropdown-menu"><div class="nav-dropdown-menu-inner">
+        <a href="gear.html" class="nav-dropdown-item">All Gear</a>
+        <a href="gear.html#timing" class="nav-dropdown-item">Timing</a>
+        <a href="gear.html#performance-tech" class="nav-dropdown-item">Performance Tech</a>
+        <a href="gear.html#recovery" class="nav-dropdown-item">Recovery</a>
+      </div></div>
     </div>
-
     <a href="about.html" class="nav-link">About</a>
   </div>
-
-  <a href="privacy.html" class="nav-policy">Privacy Policy</a>
+  <div class="nav-legal">
+    <a href="privacy.html" class="nav-policy">Privacy</a>
+    <span class="nav-legal-sep">·</span>
+    <a href="terms_cond.html" class="nav-policy">Terms</a>
+  </div>
+  <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
-
+ 
+<div class="nav-mobile-menu" id="mobileMenu">
+  <a href="index.html" class="nav-mobile-item active">Calculators</a>
+  <a href="index.html" class="nav-mobile-item" style="padding-left:36px;font-weight:400;font-size:14px;">Sprint Calculator</a>
+  <a href="conditions_converter.html" class="nav-mobile-item" style="padding-left:36px;font-weight:400;font-size:14px;">Conditions Converter</a>
+  <a href="gear.html" class="nav-mobile-item">Gear</a>
+  <a href="gear.html#timing" class="nav-mobile-item" style="padding-left:36px;font-weight:400;font-size:14px;">Timing</a>
+  <a href="gear.html#performance-tech" class="nav-mobile-item" style="padding-left:36px;font-weight:400;font-size:14px;">Performance Tech</a>
+  <a href="gear.html#recovery" class="nav-mobile-item" style="padding-left:36px;font-weight:400;font-size:14px;">Recovery</a>
+  <a href="about.html" class="nav-mobile-item">About</a>
+  <div class="nav-mobile-sep"></div>
+  <a href="privacy.html" class="nav-mobile-legal">Privacy Policy</a>
+  <a href="terms_cond.html" class="nav-mobile-legal">Terms & Conditions</a>
+</div>
+ 
   <div class="header">
     <div class="tag">A Sprint Calculator Tool</div>
     <h1>Race Conditions <span>Converter</span></h1>
   </div>
-
+ 
   <div class="card">
-
-    <!-- ── YOUR CONDITIONS ── -->
     <div class="section-label">My <span>Conditions</span></div>
     <div class="grid-3" style="margin-bottom:12px;">
-      <div class="field">
-        <label>Event</label>
-        <select id="event">
-          <option value="100">100m</option>
-          <option value="200">200m</option>
-        </select>
-      </div>
-      <div class="field">
-        <label>Time (s)</label>
-        <input type="number" id="time" value="12.00" step="0.01" min="5" max="60">
-      </div>
-      <div class="field">
-        <label>Wind (m/s)</label>
-        <input type="number" id="wind-in" value="0.0" step="0.1" min="-6" max="6">
-      </div>
+      <div class="field"><label>Event</label><select id="event"><option value="100">100m</option><option value="200">200m</option></select></div>
+      <div class="field"><label>Time (s)</label><input type="number" id="time" value="12.00" step="0.01" min="5" max="60"></div>
+      <div class="field"><label>Wind (m/s)</label><input type="text" id="wind-in" value="0.0" inputmode="decimal"></div>
     </div>
     <div class="grid-4" id="grid-your-extra">
-      <div class="field">
-        <label>Altitude (m)</label>
-        <input type="number" id="altitude-in" value="0" step="50" min="0" max="4000">
-        <div class="opt-hint">Default: sea level</div>
-      </div>
-      <div class="field">
-        <label>Temperature (°C)</label>
-        <input type="number" id="temperature-in" value="25" step="1" min="-10" max="50">
-        <div class="opt-hint">Default: 25°C</div>
-      </div>
-      <div class="field field-hidden" id="lane-field-in">
-        <label>Your Lane</label>
-        <select id="lane-in">
-          <option value="1">1</option><option value="2">2</option>
-          <option value="3">3</option><option value="4">4</option>
-          <option value="5" selected>5</option><option value="6">6</option>
-          <option value="7">7</option><option value="8">8</option>
-        </select>
-        <div class="opt-hint">Lane you ran in</div>
-      </div>
+      <div class="field"><label>Altitude (m)</label><input type="number" id="altitude-in" value="0" step="50" min="0" max="4000"><div class="opt-hint">Default: sea level</div></div>
+      <div class="field"><label>Temperature (°C)</label><input type="number" id="temperature-in" value="25" step="1" min="-10" max="50"><div class="opt-hint">Default: 25°C</div></div>
+      <div class="field field-hidden" id="lane-field-in"><label>Your Lane</label><select id="lane-in"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5" selected>5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option></select><div class="opt-hint">Lane you ran in</div></div>
     </div>
-
     <div class="divider"></div>
-
-    <!-- ── TARGET CONDITIONS ── -->
     <div class="section-label">Target <span>Conditions</span></div>
-
     <div class="slider-wrap">
       <div class="slider-header">
-        <div>
-          <div class="wind-display zero" id="wind-display">0.0 m/s</div>
-          <div class="wind-label">Target wind speed</div>
-        </div>
+        <div><div class="wind-display zero" id="wind-display">0.0 m/s</div><div class="wind-label">Target wind speed</div></div>
       </div>
-      <input type="range" class="wind-slider" id="wind-slider"
-             min="-6" max="6" step="0.1" value="0">
-      <div class="slider-ticks">
-        <span>−6.0</span><span>−3.0</span><span>0.0</span>
-        <span>+3.0</span><span>+6.0</span>
-      </div>
+      <input type="range" class="wind-slider" id="wind-slider" min="-6" max="6" step="0.1" value="0">
+      <div class="slider-ticks"><span>−6.0</span><span>−3.0</span><span>0.0</span><span>+3.0</span><span>+6.0</span></div>
     </div>
-
     <div class="grid-4" id="grid-target-extra">
-      <div class="field">
-        <label>Altitude (m)</label>
-        <input type="number" id="altitude-target" value="0" step="50" min="0" max="3000">
-        <div class="opt-hint">Default: sea level</div>
-      </div>
-      <div class="field">
-        <label>Temperature (°C)</label>
-        <input type="number" id="temperature-target" value="25" step="1" min="-10" max="50">
-        <div class="opt-hint">Default: 25°C</div>
-      </div>
-      <div class="field field-hidden" id="lane-field-target">
-        <label>Target Lane</label>
-        <select id="lane-target">
-          <option value="1">1</option><option value="2">2</option>
-          <option value="3">3</option><option value="4">4</option>
-          <option value="5" selected>5</option><option value="6">6</option>
-          <option value="7">7</option><option value="8">8</option>
-        </select>
-        <div class="opt-hint">Outer lanes = faster</div>
-      </div>
+      <div class="field"><label>Altitude (m)</label><input type="number" id="altitude-target" value="0" step="50" min="0" max="3000"><div class="opt-hint">Default: sea level</div></div>
+      <div class="field"><label>Temperature (°C)</label><input type="number" id="temperature-target" value="25" step="1" min="-10" max="50"><div class="opt-hint">Default: 25°C</div></div>
+      <div class="field field-hidden" id="lane-field-target"><label>Target Lane</label><select id="lane-target"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5" selected>5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option></select><div class="opt-hint">Outer lanes = faster</div></div>
     </div>
-
     <div class="divider"></div>
-
-    <!-- ── RESULT ── -->
     <div class="section-label">Predicted <span>Time</span></div>
     <div class="result-row">
       <div class="result-main">
@@ -397,134 +214,85 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="result-time" id="result-time">—<span class="unit">s</span></div>
         <div id="legal-badge" class="legal-badge legal">✓ Legal wind</div>
       </div>
-      <div class="breakdown" id="breakdown">
-        <!-- chips injected by JS -->
-      </div>
+      <div class="breakdown" id="breakdown"></div>
     </div>
-
     <div class="citation">
       Wind &amp; altitude: Mureika, J.R. (2000). Temperature: Linthorne, N.P. (1994), ~0.001s/°C per 100m.
       Lane: empirical estimate, Diamond League 200m data (≈0.018s/lane, log decay).<br>
       <a href="https://arxiv.org/abs/physics/0006057" target="_blank">arxiv: physics/0006057</a>
     </div>
-
   </div>
-
+ 
   <script>
     const DELTA = 0.027;
+    function windAltDelta(t_ref,w,d,H_eff){const exp_term=Math.exp(-0.000125*H_eff);const denom=1.027-DELTA*exp_term*Math.pow(1-w*t_ref/d,2);return t_ref/denom-t_ref;}
+    function tempToHeff(H_physical,T){return H_physical+(25-T)/(6.5/1000);}
+    const LANE_ADV={1:0.000,2:0.040,3:0.070,4:0.090,5:0.102,6:0.110,7:0.116,8:0.120};
+    function laneAdv(lane){return LANE_ADV[lane]||0;}
+    function laneDelta(laneIn,laneTarget){return-(laneAdv(laneTarget)-laneAdv(laneIn));}
+    function parseWindInput(val) {
+      if (!val) return 0;
 
-    function windAltDelta(t_ref, w, d, H_eff) {
-      const exp_term = Math.exp(-0.000125 * H_eff);
-      const denom = 1.027 - DELTA * exp_term * Math.pow(1 - w * t_ref / d, 2);
-      return t_ref / denom - t_ref;
+      let v = val.trim();
+      v = v.replace(/\+\s+/g, "+");
+      v = v.replace(/-\s+/g, "-");
+      v = v.replace(",", "."); // per seguretat
+
+      let num = parseFloat(v);
+      if (isNaN(num)) return 0;
+
+      // clamp entre -6 i 6
+      return Math.max(-6, Math.min(6, num));
     }
-
-    function tempToHeff(H_physical, T) {
-      return H_physical + (25 - T) / (6.5 / 1000);
+    function compute(){
+      const d=parseFloat(document.getElementById('event').value);
+      const t_in=parseFloat(document.getElementById('time').value);
+      const w_in = parseWindInput(document.getElementById('wind-in').value);
+      const w_tgt=parseFloat(document.getElementById('wind-slider').value);
+      const alt_in=parseFloat(document.getElementById('altitude-in').value)||0;
+      const temp_in=parseFloat(document.getElementById('temperature-in').value);
+      const alt_tgt=parseFloat(document.getElementById('altitude-target').value)||0;
+      const temp_tgt=parseFloat(document.getElementById('temperature-target').value);
+      const is200=d===200;
+      const ln_in=is200?parseInt(document.getElementById('lane-in').value):null;
+      const ln_tgt=is200?parseInt(document.getElementById('lane-target').value):null;
+      if(isNaN(t_in)||t_in<=0){document.getElementById('result-time').innerHTML='—<span class="unit">s</span>';return;}
+      const T_in=isNaN(temp_in)?25:temp_in;
+      const T_tgt=isNaN(temp_tgt)?25:temp_tgt;
+      const t_ref=t_in;
+      const dWind=windAltDelta(t_ref,w_tgt,d,0)-windAltDelta(t_ref,w_in,d,0);
+      const H_in_eff=tempToHeff(alt_in,25);
+      const H_tgt_eff=tempToHeff(alt_tgt,25);
+      const dAlt=windAltDelta(t_ref,0,d,H_tgt_eff)-windAltDelta(t_ref,0,d,H_in_eff);
+      const TEMP_COEFF=-0.001*(d/100);
+      const dTemp=TEMP_COEFF*(T_tgt-T_in);
+      const dLane=(is200&&ln_in&&ln_tgt)?laneDelta(ln_in,ln_tgt):0;
+      const t_pred=t_in+dWind+dAlt+dTemp+dLane;
+      const windDisplay=document.getElementById('wind-display');
+      const wSign=w_tgt>0?'+':'';
+      windDisplay.textContent=`${wSign}${w_tgt.toFixed(1)} m/s`;
+      windDisplay.className='wind-display '+(w_tgt>0?'positive':w_tgt<0?'negative':'zero');
+      document.getElementById('result-time').innerHTML=`${t_pred.toFixed(2)}<span class="unit">s</span>`;
+      const badge=document.getElementById('legal-badge');
+      if(w_tgt<=2.0){badge.className='legal-badge legal';badge.textContent='✓ Legal wind';}
+      else{badge.className='legal-badge illegal';badge.textContent='✗ Wind-assisted';}
+      const bd=document.getElementById('breakdown');
+      bd.innerHTML='';
+      function chip(label,delta){const abs=Math.abs(delta);if(abs<0.0005)return;const cls=delta<0?'faster':'slower';const sign=delta<0?'−':'+';const el=document.createElement('div');el.className=`delta-chip ${cls}`;el.textContent=`${label}: ${sign}${abs.toFixed(3)}s`;bd.appendChild(el);}
+      chip('Wind',dWind);chip('Altitude',dAlt);chip('Temperature',dTemp);if(is200)chip('Lane',dLane);
+      if(bd.children.length===0){const el=document.createElement('div');el.className='delta-chip neutral';el.textContent='No change';bd.appendChild(el);}
     }
-
-    const LANE_ADV = { 1: 0.000, 2: 0.040, 3: 0.070, 4: 0.090, 5: 0.102, 6: 0.110, 7: 0.116, 8: 0.120 };
-    function laneAdv(lane) { return LANE_ADV[lane] || 0; }
-    function laneDelta(laneIn, laneTarget) {
-      return -(laneAdv(laneTarget) - laneAdv(laneIn));
-    }
-
-    function compute() {
-      const d        = parseFloat(document.getElementById('event').value);
-      const t_in     = parseFloat(document.getElementById('time').value);
-      const w_in     = parseFloat(document.getElementById('wind-in').value) || 0;
-      const w_tgt    = parseFloat(document.getElementById('wind-slider').value);
-      const alt_in   = parseFloat(document.getElementById('altitude-in').value)    || 0;
-      const temp_in  = parseFloat(document.getElementById('temperature-in').value);
-      const alt_tgt  = parseFloat(document.getElementById('altitude-target').value) || 0;
-      const temp_tgt = parseFloat(document.getElementById('temperature-target').value);
-      const is200    = d === 200;
-      const ln_in    = is200 ? parseInt(document.getElementById('lane-in').value)     : null;
-      const ln_tgt   = is200 ? parseInt(document.getElementById('lane-target').value) : null;
-
-      if (isNaN(t_in) || t_in <= 0) {
-        document.getElementById('result-time').innerHTML = '—<span class="unit">s</span>';
-        return;
-      }
-
-      const T_in  = isNaN(temp_in)  ? 25 : temp_in;
-      const T_tgt = isNaN(temp_tgt) ? 25 : temp_tgt;
-      const t_ref = t_in;
-
-      const dWind = windAltDelta(t_ref, w_tgt, d, 0) - windAltDelta(t_ref, w_in, d, 0);
-
-      const H_in_eff  = tempToHeff(alt_in,  25);
-      const H_tgt_eff = tempToHeff(alt_tgt, 25);
-      const dAlt = windAltDelta(t_ref, 0, d, H_tgt_eff) - windAltDelta(t_ref, 0, d, H_in_eff);
-
-      const TEMP_COEFF = -0.001 * (d / 100);
-      const dTemp = TEMP_COEFF * (T_tgt - T_in);
-
-      const dLane = (is200 && ln_in && ln_tgt) ? laneDelta(ln_in, ln_tgt) : 0;
-
-      const t_pred = t_in + dWind + dAlt + dTemp + dLane;
-
-      const windDisplay = document.getElementById('wind-display');
-      const wSign = w_tgt > 0 ? '+' : '';
-      windDisplay.textContent = `${wSign}${w_tgt.toFixed(1)} m/s`;
-      windDisplay.className = 'wind-display ' +
-        (w_tgt > 0 ? 'positive' : w_tgt < 0 ? 'negative' : 'zero');
-
-      document.getElementById('result-time').innerHTML =
-        `${t_pred.toFixed(2)}<span class="unit">s</span>`;
-
-      const badge = document.getElementById('legal-badge');
-      if (w_tgt <= 2.0) {
-        badge.className = 'legal-badge legal';
-        badge.textContent = '✓ Legal wind';
-      } else {
-        badge.className = 'legal-badge illegal';
-        badge.textContent = '✗ Wind-assisted';
-      }
-
-      const bd = document.getElementById('breakdown');
-      bd.innerHTML = '';
-
-      function chip(label, delta) {
-        const abs = Math.abs(delta);
-        if (abs < 0.0005) return;
-        const cls = delta < 0 ? 'faster' : 'slower';
-        const sign = delta < 0 ? '−' : '+';
-        const el = document.createElement('div');
-        el.className = `delta-chip ${cls}`;
-        el.textContent = `${label}: ${sign}${abs.toFixed(3)}s`;
-        bd.appendChild(el);
-      }
-
-      chip('Wind', dWind);
-      chip('Altitude', dAlt);
-      chip('Temperature', dTemp);
-      if (is200) chip('Lane', dLane);
-
-      if (bd.children.length === 0) {
-        const el = document.createElement('div');
-        el.className = 'delta-chip neutral';
-        el.textContent = 'No change';
-        bd.appendChild(el);
-      }
-    }
-
-    function toggleLane() {
-      const is200 = document.getElementById('event').value === '200';
-      document.getElementById('lane-field-in').classList.toggle('field-hidden', !is200);
-      document.getElementById('lane-field-target').classList.toggle('field-hidden', !is200);
-    }
-
-    ['wind-slider','time','wind-in','altitude-in','temperature-in',
-     'altitude-target','temperature-target'].forEach(id => {
-      document.getElementById(id).addEventListener('input', compute);
-    });
-    ['lane-in','lane-target','event'].forEach(id => {
-      document.getElementById(id).addEventListener('change', () => { toggleLane(); compute(); });
-    });
-
-    toggleLane();
-    compute();
+    function toggleLane(){const is200=document.getElementById('event').value==='200';document.getElementById('lane-field-in').classList.toggle('field-hidden',!is200);document.getElementById('lane-field-target').classList.toggle('field-hidden',!is200);}
+    ['wind-slider','time','wind-in','altitude-in','temperature-in','altitude-target','temperature-target'].forEach(id=>{document.getElementById(id).addEventListener('input',compute);});
+    ['lane-in','lane-target','event'].forEach(id=>{document.getElementById(id).addEventListener('change',()=>{toggleLane();compute();});});
+    toggleLane();compute();
   </script>
+ 
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
+</script>
 </body>
 </html>

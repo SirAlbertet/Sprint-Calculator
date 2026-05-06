@@ -18,26 +18,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XCGHYN2HE0"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XCGHYN2HE0');</script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8609690760733686" crossorigin="anonymous"></script>
   <style>
     *{box-sizing:border-box;margin:0;padding:0;}
     body{font-family:'Barlow',sans-serif;background-color:rgb(219,234,241);display:block;padding:0;opacity:1;}
-
+ 
     /* ── NAVBAR ── */
-    .navbar{position:fixed;top:0;left:0;width:100%;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.1);display:flex;align-items:center;justify-content:space-between;padding:10px 32px;box-sizing:border-box;z-index:1000;}
-    .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:#000;}
-    .nav-logo img{width:28px;height:28px;}
-    .nav-logo-text{display:flex;flex-direction:column;line-height:1.2;}
-    .nav-logo-name{font-size:15px;font-weight:bold;color:#000;}
-    .nav-logo-slogan{font-size:10px;color:rgb(37,158,210);letter-spacing:.5px;}
+    .navbar{position:fixed;top:0;left:0;width:100%;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.1);display:flex;align-items:center;justify-content:space-between;padding:10px 32px;z-index:1000;}
+    .nav-logo{display:flex;align-items:center;text-decoration:none;}
+    .nav-logo img{width:32px;height:32px;}
     .nav-links{position:absolute;left:50%;transform:translateX(-50%);display:flex;gap:6px;align-items:center;}
-    .nav-link{text-decoration:none;color:#444;font-size:14px;font-weight:normal;padding:7px 18px;border-radius:5px;transition:background-color .2s,color .2s;white-space:nowrap;background:transparent;}
-    .nav-link:hover{background-color:rgb(219,234,241);color:#000;}
-    .nav-link.active{background-color:rgb(88,196,243);color:#fff;font-weight:bold;}
+    .nav-link{text-decoration:none;color:#444;font-size:14px;font-weight:normal;padding:7px 18px;border-radius:5px;transition:background .2s,color .2s;white-space:nowrap;background:transparent;}
+    .nav-link:hover{background:rgb(219,234,241);color:#000;}
+    .nav-link.active{background:rgb(88,196,243);color:#fff;font-weight:bold;}
     .nav-dropdown{position:relative;display:inline-block;}
     .nav-dropdown-trigger{text-decoration:none;color:#444;font-size:14px;font-weight:normal;padding:7px 18px;border-radius:5px;background:transparent;cursor:pointer;display:inline-flex;align-items:center;gap:5px;transition:background .2s,color .2s;white-space:nowrap;}
-    .nav-dropdown-trigger:hover{background-color:rgb(219,234,241);color:#000;}
+    .nav-dropdown-trigger:hover{background:rgb(219,234,241);color:#000;}
     .nav-dropdown-trigger::after{content:'▾';font-size:10px;opacity:.6;}
-    .nav-dropdown-trigger.active{background-color:rgb(88,196,243);color:#fff;font-weight:bold;}
+    .nav-dropdown-trigger.active{background:rgb(88,196,243);color:#fff;font-weight:bold;}
     .nav-dropdown-trigger.active::after{opacity:1;}
     .nav-dropdown-menu{display:none;position:absolute;top:100%;left:50%;transform:translateX(-50%);padding-top:8px;z-index:200;min-width:200px;}
     .nav-dropdown-menu-inner{background:#fff;border-radius:8px;box-shadow:0 8px 24px rgba(0,0,0,.12);overflow:hidden;}
@@ -45,17 +43,33 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .nav-dropdown-item{display:block;text-decoration:none;color:#333;font-size:13px;font-weight:600;padding:11px 18px;transition:background .15s,color .15s;border-bottom:1px solid rgba(0,0,0,.05);}
     .nav-dropdown-item:last-child{border-bottom:none;}
     .nav-dropdown-item:hover{background:rgb(219,234,241);color:rgb(37,158,210);}
-    .anchor-target{scroll-margin-top:72px;}
+    .nav-legal{display:flex;align-items:center;gap:4px;}
     .nav-policy{text-decoration:none;color:#999;font-size:12px;padding:7px 14px;border-radius:5px;transition:color .2s,background .2s;white-space:nowrap;}
-    .nav-policy:hover{color:#444;background-color:rgb(219,234,241);}
+    .nav-policy:hover{color:#444;background:rgb(219,234,241);}
     .nav-policy.active{color:rgb(37,158,210);font-weight:600;}
-    @media(max-width:600px){
+    .nav-legal-sep{color:#ddd;font-size:12px;user-select:none;}
+    .nav-hamburger{display:none;background:none;border:none;cursor:pointer;padding:6px;border-radius:5px;transition:background .2s;}
+    .nav-hamburger:hover{background:rgb(219,234,241);}
+    .nav-hamburger span{display:block;width:22px;height:2px;background:#444;border-radius:2px;}
+    .nav-hamburger span+span{margin-top:5px;}
+    .nav-mobile-menu{display:none;position:fixed;top:52px;left:0;width:100%;background:#fff;box-shadow:0 4px 16px rgba(0,0,0,.12);z-index:999;flex-direction:column;padding:8px 0 12px;}
+    .nav-mobile-menu.open{display:flex;}
+    .nav-mobile-item{text-decoration:none;color:#333;font-size:15px;font-weight:600;padding:13px 24px;border-bottom:1px solid rgba(0,0,0,.04);transition:background .15s;}
+    .nav-mobile-item:hover{background:rgb(219,234,241);}
+    .nav-mobile-item.active{color:rgb(88,196,243);}
+    .nav-mobile-sep{height:1px;background:rgba(0,0,0,.06);margin:4px 0;}
+    .nav-mobile-legal{text-decoration:none;color:#999;font-size:13px;padding:10px 24px;display:block;transition:background .15s;}
+    .nav-mobile-legal:hover{background:rgb(219,234,241);}
+    .nav-mobile-legal.active{color:rgb(37,158,210);font-weight:600;}
+    @media(max-width:768px){
       .navbar{padding:10px 16px;}
-      .nav-links{position:static;transform:none;}
-      .nav-logo-slogan{display:none;}
+      .nav-links{display:none;}
+      .nav-legal{display:none;}
+      .nav-hamburger{display:flex;flex-direction:column;justify-content:center;}
     }
-
+ 
     /* HERO */
+    .anchor-target{scroll-margin-top:72px;}
     .hero{margin-top:52px;display:grid;grid-template-columns:3fr 2fr;min-height:calc(100vh - 52px);}
     .hero-left{background:#1c2b35;position:relative;overflow:hidden;}
     .hero-photo-bg{position:absolute;inset:0;background-color:#1c2b35;background-size:cover;background-position:center top;}
@@ -71,8 +85,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .proof-badge-text strong{color:#fff;}
     .hero-cta{display:inline-block;background:rgb(88,196,243);color:#fff;font-weight:700;font-size:14px;padding:13px 28px;border-radius:6px;text-decoration:none;align-self:flex-start;transition:background .2s;letter-spacing:.3px;}
     .hero-cta:hover{background:rgb(37,158,210);}
-
-    /* FOUNDERS */
     .founders-section{display:grid;grid-template-columns:1fr 1fr;}
     .founder-panel{position:relative;min-height:540px;overflow:hidden;display:flex;align-items:flex-end;}
     .founder-panel:first-child{border-right:2px solid rgb(219,234,241);}
@@ -85,11 +97,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .founder-pb{display:inline-flex;align-items:center;gap:5px;background:rgba(88,196,243,.25);border:1px solid rgba(88,196,243,.5);border-radius:6px;padding:3px 10px;}
     .founder-pb-label{font-size:10px;color:rgba(88,196,243,.8);font-weight:700;letter-spacing:1px;text-transform:uppercase;}
     .founder-pb-value{font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:800;color:rgb(88,196,243);letter-spacing:.5px;}
-    .founder-ig{display:inline-flex;align-items:center;gap:6px;text-decoration:none;color:#fff;font-size:13px;background:rgba(255,255,255,.15);backdrop-filter:blur(4px);padding:6px 14px;border-radius:20px;transition:background .2s;}
-    .founder-ig:hover{background:rgba(255,255,255,.28);}
-    .founder-ig img{width:14px;height:14px;filter:brightness(10);}
-
-    /* CONTENT SECTIONS */
     .content-section{display:grid;grid-template-columns:1fr 1fr;min-height:380px;}
     .content-section.reverse{direction:rtl;}
     .content-section.reverse>*{direction:ltr;}
@@ -98,8 +105,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .content-text h2{font-family:'Barlow Condensed',sans-serif;font-size:38px;font-weight:800;color:#111;margin-bottom:18px;line-height:1.15;text-transform:uppercase;}
     .content-text p{font-size:15px;color:#555;line-height:1.8;}
     .content-text p+p{margin-top:14px;}
-
-    /* FULL WIDTH TEXT */
     .full-text-section{background:#fff;padding:72px 0;}
     .full-text-section--alt{background:rgb(219,234,241);}
     .full-text-inner{max-width:960px;margin:0 auto;padding:0 72px;}
@@ -107,19 +112,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .full-text-cols p{font-size:15px;color:#555;line-height:1.8;}
     .full-text-inner .section-tag{font-size:14px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgb(37,158,210);margin-bottom:12px;}
     .full-text-inner h2{font-family:'Barlow Condensed',sans-serif;font-size:38px;font-weight:800;color:#111;margin-bottom:28px;line-height:1.15;text-transform:uppercase;}
-
-    /* PHOTO PANEL */
     .photo-panel{position:relative;overflow:hidden;background:rgb(210,228,238);}
     .panel-photo{width:100%;height:100%;object-fit:cover;display:block;}
-
-    /* CTA */
     .cta-full{background:rgb(88,196,243);padding:72px 48px;text-align:center;}
     .cta-full h2{font-family:'Barlow Condensed',sans-serif;font-size:36px;font-weight:800;color:#fff;margin-bottom:10px;text-transform:uppercase;letter-spacing:.3px;}
     .cta-full p{font-size:16px;color:rgba(255,255,255,.88);margin-bottom:28px;}
     .cta-full-btn{display:inline-block;background:#fff;color:rgb(37,158,210);font-weight:700;font-size:15px;padding:14px 36px;border-radius:6px;text-decoration:none;transition:opacity .2s;letter-spacing:.2px;}
     .cta-full-btn:hover{opacity:.88;}
-
-    /* FOLLOW */
     .follow-section{background:#fff;padding:40px 48px;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;}
     .follow-label{font-size:13px;font-weight:700;color:#888;letter-spacing:1px;text-transform:uppercase;margin-right:4px;}
     .follow-link{display:inline-flex;align-items:center;gap:6px;text-decoration:none;color:#333;font-size:13px;background:rgb(219,234,241);padding:8px 16px;border-radius:20px;transition:background .2s,color .2s;}
@@ -128,12 +127,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .follow-divider{width:1px;height:28px;background:#ddd;margin:0 8px;}
     .contact-link{display:inline-flex;align-items:center;gap:6px;text-decoration:none;color:#333;font-size:13px;background:rgb(219,234,241);padding:8px 16px;border-radius:20px;transition:background .2s,color .2s;}
     .contact-link:hover{background:rgb(88,196,243);color:#fff;}
-
-    /* MOBILE */
+ 
     @media(max-width:768px){
-      .navbar{padding:10px 16px;}
-      .nav-links{position:static;transform:none;}
-      .nav-logo-slogan{display:none;}
       .hero{grid-template-columns:1fr;min-height:auto;}
       .hero-left{min-height:260px;}
       .hero-right{padding:36px 24px;}
@@ -157,51 +152,53 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   </style>
 </head>
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TJFTKC"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TJFTKC" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+ 
 <nav class="navbar">
-  <a href="index.html" class="nav-logo">
-    <img src="logo.png" alt="Logo">
-    <div class="nav-logo-text">
-      <span class="nav-logo-name">Sprint Calculator</span>
-      <span class="nav-logo-slogan">Built by athletes. For athletes.</span>
-    </div>
-  </a>
-
+  <a href="index.html" class="nav-logo"><img src="logo.png" alt="Sprint Calculator"></a>
   <div class="nav-links">
     <div class="nav-dropdown">
-      <!-- sense active: NO estem a Calculators -->
       <a href="index.html" class="nav-dropdown-trigger">Calculators</a>
-      <div class="nav-dropdown-menu">
-        <div class="nav-dropdown-menu-inner">
-          <a href="index.html" class="nav-dropdown-item">Sprint Calculator</a>
-          <a href="conditions_converter.html" class="nav-dropdown-item">Conditions Converter</a>
-        </div>
-      </div>
+      <div class="nav-dropdown-menu"><div class="nav-dropdown-menu-inner">
+        <a href="index.html" class="nav-dropdown-item">Sprint Calculator</a>
+        <a href="conditions_converter.html" class="nav-dropdown-item">Conditions Converter</a>
+      </div></div>
     </div>
-
     <div class="nav-dropdown">
-      <!-- sense active: NO estem a Gear -->
       <a href="gear.html" class="nav-dropdown-trigger">Gear</a>
-      <div class="nav-dropdown-menu">
-        <div class="nav-dropdown-menu-inner">
-          <a href="gear.html" class="nav-dropdown-item">All Gear</a>
-          <a href="gear.html#timing" class="nav-dropdown-item">Timing</a>
-          <a href="gear.html#performance-tech" class="nav-dropdown-item">Performance Tech</a>
-          <a href="gear.html#recovery" class="nav-dropdown-item">Recovery</a>
-        </div>
-      </div>
+      <div class="nav-dropdown-menu"><div class="nav-dropdown-menu-inner">
+        <a href="gear.html" class="nav-dropdown-item">All Gear</a>
+        <a href="gear.html#timing" class="nav-dropdown-item">Timing</a>
+        <a href="gear.html#performance-tech" class="nav-dropdown-item">Performance Tech</a>
+        <a href="gear.html#recovery" class="nav-dropdown-item">Recovery</a>
+      </div></div>
     </div>
-
-    <!-- ACTIVE: estem a About -->
     <a href="about.html" class="nav-link active">About</a>
   </div>
-
-  <a href="privacy.html" class="nav-policy">Privacy Policy</a>
+  <div class="nav-legal">
+    <a href="privacy.html" class="nav-policy">Privacy</a>
+    <span class="nav-legal-sep">·</span>
+    <a href="terms_cond.html" class="nav-policy">Terms</a>
+  </div>
+  <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
-
+ 
+<div class="nav-mobile-menu" id="mobileMenu">
+  <a href="index.html" class="nav-mobile-item">Calculators</a>
+  <a href="index.html" class="nav-mobile-item" style="padding-left:36px;font-weight:400;font-size:14px;">Sprint Calculator</a>
+  <a href="conditions_converter.html" class="nav-mobile-item" style="padding-left:36px;font-weight:400;font-size:14px;">Conditions Converter</a>
+  <a href="gear.html" class="nav-mobile-item">Gear</a>
+  <a href="gear.html#timing" class="nav-mobile-item" style="padding-left:36px;font-weight:400;font-size:14px;">Timing</a>
+  <a href="gear.html#performance-tech" class="nav-mobile-item" style="padding-left:36px;font-weight:400;font-size:14px;">Performance Tech</a>
+  <a href="gear.html#recovery" class="nav-mobile-item" style="padding-left:36px;font-weight:400;font-size:14px;">Recovery</a>
+  <a href="about.html" class="nav-mobile-item active">About</a>
+  <div class="nav-mobile-sep"></div>
+  <a href="privacy.html" class="nav-mobile-legal">Privacy Policy</a>
+  <a href="terms_cond.html" class="nav-mobile-legal">Terms & Conditions</a>
+</div>
+ 
 <section class="hero">
   <div class="hero-left">
     <div class="hero-photo-bg" style="background-image:url('barcelona.jpg');background-size:120%;background-position:45%;"></div>
@@ -223,7 +220,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <a class="hero-cta" href="index.html">Start predicting your sprint performance →</a>
   </div>
 </section>
-
+ 
 <section class="founders-section">
   <div class="founder-panel">
     <div class="founder-bg-placeholder" style="background-image:url('albert.jpg');background-size:150%;background-position:center 29%;"></div>
@@ -232,10 +229,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="founder-name">Albert Romeo</div>
       <div class="founder-meta">
         <span class="founder-role">Sprinter · Co-founder</span>
-        <div class="founder-pb">
-          <span class="founder-pb-label">100m PB</span>
-          <span class="founder-pb-value">10.39</span>
-        </div>
+        <div class="founder-pb"><span class="founder-pb-label">100m PB</span><span class="founder-pb-value">10.39</span></div>
       </div>
     </div>
   </div>
@@ -246,15 +240,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="founder-name">Adrià Alfonso</div>
       <div class="founder-meta">
         <span class="founder-role">Sprinter · Co-founder</span>
-        <div class="founder-pb">
-          <span class="founder-pb-label">200m PB</span>
-          <span class="founder-pb-value">20.55</span>
-        </div>
+        <div class="founder-pb"><span class="founder-pb-label">200m PB</span><span class="founder-pb-value">20.55</span></div>
       </div>
     </div>
   </div>
 </section>
-
+ 
 <section class="full-text-section">
   <div class="full-text-inner">
     <div class="section-tag">Who We Are</div>
@@ -265,7 +256,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </div>
 </section>
-
+ 
 <section class="content-section reverse">
   <div class="content-text">
     <div class="section-tag">How It Works</div>
@@ -277,7 +268,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <img src="mace.png" alt="How it works" class="panel-photo">
   </div>
 </section>
-
+ 
 <section class="full-text-section full-text-section--alt">
   <div class="full-text-inner">
     <div class="section-tag">Our Mission</div>
@@ -288,13 +279,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </div>
 </section>
-
+ 
 <section class="cta-full">
   <h2>If you're serious about sprinting,<br>you're in the right place.</h2>
   <p>Join hundreds of athletes and coaches who use Sprint Calculator every day.</p>
   <a class="cta-full-btn" href="index.html">Start predicting your sprint performance →</a>
 </section>
-
+ 
 <div class="follow-section">
   <span class="follow-label">Follow us</span>
   <a class="follow-link" href="https://www.instagram.com/sprintcalculator" target="_blank"><img src="instagram.png" alt="ig"> @sprintcalculator</a>
@@ -304,6 +295,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <span class="follow-label">Contact</span>
   <a class="contact-link" href="mailto:sprintcalculator@gmail.com">✉️ sprintcalculator@gmail.com</a>
 </div>
-
+ 
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
+</script>
 </body>
 </html>
